@@ -1,0 +1,16 @@
+# PCO completion-report runtime gate plugin manifest.
+#
+# priority is advisory for forward compatibility. The current Hermes plugin
+# manager does not consume it; this slice documents the intended first
+# transform_llm_output ordering without editing core plugin-manager code.
+name: pco-completion-gate
+version: 0.1.0
+description: Opt-in runtime completion-report gate for Source-ratified Creator Engine work.
+author: Hermes Agent
+kind: standalone
+priority: -1000
+hooks:
+  - on_session_start
+  - pre_llm_call
+  - transform_llm_output
+  - on_session_end
